@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project ProblemaMQTT ****
+
+make all 
+Info: Building ../ProblemaMQTT_bsp/
+make --no-print-directory -C ../ProblemaMQTT_bsp/
+[BSP build complete]
+[ProblemaMQTT build complete]
+
+**** Build Finished ****

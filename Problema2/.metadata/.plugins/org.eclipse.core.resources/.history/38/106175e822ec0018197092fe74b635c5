@@ -1,0 +1,268 @@
+#include "io.h"
+#include "system.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <time.h>
+#include <string.h>
+#include "altera_avalon_pio_regs.h"
+#include "altera_avalon_uart_regs.h"
+
+#define TRUE 1
+#define FALSE 0
+#define MAX_OPTIONS_NUMBER 5
+#define RETURN_HOME 0x01
+#define CLEAR_DISPLAY 0x02
+
+int nextOption (int currentOption);
+int previousOption (int currentOption);
+
+void showOption (int currentOption);
+void enterOption (int currentOption);
+void exitOption (int currentOption);
+void showLed(int currentOption);
+void writeWord(char word[]);
+void hideAllLeds();
+void initializeDisplay();
+void delay(int ms);
+void sendCommand();
+char read_uart();
+//void sendCommand(char command[]);
+
+int choosed = FALSE;
+
+int main()
+{
+	unsigned int buttonUp = 0, buttonDown = 0, buttonExit = 0, buttonEnter = 0 ;
+	int currentOption = 0;
+
+	initializeDisplay();
+	usleep(2000);
+    sendCommand();
+
+//    char resposta;
+//    resposta = read_uart();
+//
+//	printf("%c", resposta);
+
+	usleep(3000);
+	printf("Inicializando");
+
+	while (TRUE) {
+		buttonUp = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_UP_BASE);
+		buttonDown = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_DOWN_BASE);
+		buttonEnter = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_ENTER_BASE);
+		buttonExit = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_EXIT_BASE);
+
+		if (buttonUp && !choosed) {
+			currentOption = previousOption(currentOption);
+			showOption(currentOption);
+			usleep(100000);
+		} else if (buttonDown && !choosed) {
+			currentOption = nextOption(currentOption);
+			showOption(currentOption);
+			usleep(100000);
+		} else if (buttonEnter && !choosed) {
+			enterOption(currentOption);
+			usleep(100000);
+		} else if (buttonExit) {
+			exitOption(currentOption);
+			usleep(100000);
+		}
+
+		usleep(500);
+	}
+	return 0;
+}
+
+void initializeDisplay () {
+	usleep(15000);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x30);
+	usleep(4100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x30);
+	usleep(100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x30);
+	usleep(5000);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x39);
+	usleep(100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x14);
+	usleep(100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x56);
+	usleep(100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x6D);
+	usleep(100);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x70);
+	usleep(2000);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x0C);
+	usleep(2000);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x06);
+	usleep(2000);
+	IOWR(LCD_OUTPUT_BASE, 0, 0x01);
+	usleep(2000);
+	hideAllLeds();
+	showOption(0);
+}
+
+int nextOption (int currentOption) {
+	int option = 0;
+
+	if (currentOption == MAX_OPTIONS_NUMBER - 1) {
+		option =  0;
+	} else {
+		option =  currentOption + 1;
+	}
+	return option;
+}
+
+int previousOption (int currentOption) {
+	int option = 0;
+
+	if (currentOption == 0) {
+		option =  MAX_OPTIONS_NUMBER - 1;
+	} else {
+		option =  currentOption - 1;
+	}
+	return option;
+}
+
+void showOption (int currentOption) {
+	char *a[5];
+	a[0] = "Opcao 1";
+	a[1] = "Opcao 2";
+	a[2] = "Opcao 3";
+	a[3] = "Opcao 4";
+	a[4] = "Opcao 5";
+
+	writeWord(a[currentOption]);
+	usleep(500);
+}
+
+void sendCommand () {
+	alt_u8 status = 0;
+	char command[] = "AT";
+	char buffer[100];
+	int i = 0;
+
+	printf ("Entrou no loop");
+	while (1) {
+		for(i = 0; i < strlen(command); i++) {
+			printf("Letra %c \n", command[i]);
+			IOWR_ALTERA_AVALON_UART_TXDATA(UART_MAIN_BASE, command[i]);
+			while( !(IORD_ALTERA_AVALON_UART_STATUS(UART_MAIN_BASE) & (1<<6)) );
+		}
+
+		IOWR_ALTERA_AVALON_UART_TXDATA(UART_MAIN_BASE, 0x0D);
+		while( !(IORD_ALTERA_AVALON_UART_STATUS(UART_MAIN_BASE) & (1<<6)) );
+
+		IOWR_ALTERA_AVALON_UART_TXDATA(UART_MAIN_BASE, 0x0A);
+		while( !(IORD_ALTERA_AVALON_UART_STATUS(UART_MAIN_BASE) & (1<<6)) );
+
+		while( !(IORD_ALTERA_AVALON_UART_STATUS(UART_MAIN_BASE) && (1<<7)));
+		printf("%x \n", IORD_ALTERA_AVALON_UART_RXDATA(UART_MAIN_BASE));
+	}
+}
+
+char read_uart()
+{
+//	char a = 'X';
+//	while (1) {
+//		a = IORD_ALTERA_AVALON_UART_RXDATA(UART_MAIN_BASE);
+//		if (a == 'c') {
+//			printf("Recebido: %c \n", a);
+//		}
+//		usleep(5000);
+//		if (a == 'K') {
+//			return a;
+//		}
+//	}
+//	return a;
+	/*
+    char x;
+    x = IORD_ALTERA_AVALON_UART_RXDATA(UART_1_BASE);
+    return x;*/
+}
+
+void enterOption (int currentOption) {
+	char *a[5];
+	a[0] = "Escolheu 1";
+	a[1] = "Escolheu 2";
+	a[2] = "Escolheu 3";
+	a[3] = "Escolheu 4";
+	a[4] = "Escolheu 5";
+	choosed = TRUE;
+
+	writeWord(a[currentOption]);
+	showLed(currentOption);
+	usleep(500);
+}
+
+void writeWord(char word[]) {
+	IOWR(LCD_OUTPUT_BASE, 0, CLEAR_DISPLAY);
+	usleep(2000);
+	IOWR(LCD_OUTPUT_BASE, 0, RETURN_HOME);
+	usleep(2000);
+
+	int i = 0;
+
+	for(i=0; i < strlen(word); i++){
+		IOWR(LCD_OUTPUT_BASE, 2, word[i]);
+		usleep(1000);
+	}
+	usleep(500);
+}
+
+void showLed (int currentOption) {
+	hideAllLeds();
+
+	switch(currentOption) {
+	case 0: //RED
+		IOWR(LED_R_BASE, 0, 1);
+		IOWR(LED_G_BASE, 0, 0);
+		IOWR(LED_B_BASE, 0, 0);
+		usleep(100000);
+		break;
+	case 1: // GREEN
+		IOWR(LED_R_BASE, 0, 0);
+		IOWR(LED_G_BASE, 0, 1);
+		IOWR(LED_B_BASE, 0, 0);
+		usleep(100000);
+		break;
+	case 2: // BLUE
+		IOWR(LED_R_BASE, 0, 0);
+		IOWR(LED_G_BASE, 0, 0);
+		IOWR(LED_B_BASE, 0, 1);
+		usleep(100000);
+		break;
+	case 3: // MAGENTA
+		IOWR(LED_R_BASE, 0, 1);
+		IOWR(LED_G_BASE, 0, 0);
+		IOWR(LED_B_BASE, 0, 1);
+		usleep(100000);
+		break;
+	case 4: // YELLOW
+		IOWR(LED_R_BASE, 0, 1);
+		IOWR(LED_G_BASE, 0, 1);
+		IOWR(LED_B_BASE, 0, 0);
+		usleep(100000);
+		break;
+	}
+}
+
+void hideAllLeds () {
+	IOWR(LED_R_BASE, 0, 1);
+	IOWR(LED_G_BASE, 0, 1);
+	IOWR(LED_B_BASE, 0, 1);
+}
+
+void exitOption (int currentOption) {
+	hideAllLeds();
+	showOption(currentOption);
+	choosed = FALSE;
+	usleep(500);
+}
+
+void delay (int ms) {
+	volatile int i = 0;
+	while (i < ms*1000000){
+		i++;
+	}
+}

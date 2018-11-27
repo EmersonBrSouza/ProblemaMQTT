@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="LCD">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_jtag_uart_0:jtag_uart_0|lcd_jtag_uart_0_scfifo_w:the_lcd_jtag_uart_0_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_nios2_qsys_0:nios2_qsys_0|lcd_nios2_qsys_0_nios2_oci:the_lcd_nios2_qsys_0_nios2_oci|lcd_nios2_qsys_0_nios2_ocimem:the_lcd_nios2_qsys_0_nios2_ocimem|lcd_nios2_qsys_0_ociram_sp_ram_module:lcd_nios2_qsys_0_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_pv71.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_nios2_qsys_0:nios2_qsys_0|lcd_nios2_qsys_0_register_bank_a_module:lcd_nios2_qsys_0_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_lig1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_nios2_qsys_0:nios2_qsys_0|lcd_nios2_qsys_0_register_bank_b_module:lcd_nios2_qsys_0_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_mig1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_jtag_uart_0:jtag_uart_0|lcd_jtag_uart_0_scfifo_r:the_lcd_jtag_uart_0_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lcd|lcd_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_2lc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

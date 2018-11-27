@@ -1,0 +1,271 @@
+Info: Starting: Create simulation model
+Info: ip-generate --project-directory=/home/aluno/Problema2/ --output-directory=/home/aluno/Problema2/lcd/simulation/ --file-set=SIM_VERILOG --report-file=sopcinfo:/home/aluno/Problema2/lcd.sopcinfo --report-file=html:/home/aluno/Problema2/lcd.html --report-file=sip:/home/aluno/Problema2/lcd/simulation/lcd.sip --report-file=csv:/home/aluno/Problema2/lcd.csv --report-file=spd:/home/aluno/Problema2/lcd.spd --report-file=cmp:/home/aluno/Problema2/lcd.cmp --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE30F23C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/aluno/Problema2/lcd.qsys
+Progress: Loading Problema2/lcd.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 13.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding button [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module button
+Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module led
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: lcd.button: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: lcd: Generating lcd "lcd" for SIM_VERILOG
+Info: pipeline_bridge_swap_transform: After transform: 6 modules, 23 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 13 modules, 49 connections
+Info: merlin_domain_transform: After transform: 26 modules, 128 connections
+Info: merlin_router_transform: After transform: 33 modules, 154 connections
+Info: reset_adaptation_transform: After transform: 35 modules, 133 connections
+Info: merlin_network_to_switch_transform: After transform: 48 modules, 163 connections
+Info: merlin_mm_transform: After transform: 48 modules, 163 connections
+Info: merlin_interrupt_mapper_transform: After transform: 49 modules, 166 connections
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Info: nios2_qsys_0: Starting RTL generation for module 'lcd_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=lcd_nios2_qsys_0 --dir=/tmp/alt7847_516846283515085985.dir/0007_nios2_qsys_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0007_nios2_qsys_0_gen//lcd_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt7847_516846283515085985.dir/0007_nios2_qsys_0_gen/    --bogus  ]
+Info: nios2_qsys_0: # 2018.11.12 09:55:33 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2018.11.12 09:55:33 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2018.11.12 09:55:35 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2018.11.12 09:55:35 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2018.11.12 09:55:35 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2018.11.12 09:55:35 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2018.11.12 09:55:39 (*)   Creating '/tmp/alt7847_516846283515085985.dir/0007_nios2_qsys_0_gen//lcd_nios2_qsys_0_nios2_waves.do'
+Info: nios2_qsys_0: # 2018.11.12 09:55:39 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2018.11.12 09:55:39 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2018.11.12 09:55:47 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'lcd_nios2_qsys_0'
+Info: nios2_qsys_0: "lcd" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: onchip_memory2_0: Starting RTL generation for module 'lcd_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=lcd_onchip_memory2_0 --dir=/tmp/alt7847_516846283515085985.dir/0008_onchip_memory2_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0008_onchip_memory2_0_gen//lcd_onchip_memory2_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt7847_516846283515085985.dir/0008_onchip_memory2_0_gen/  ]
+Info: onchip_memory2_0: Done RTL generation for module 'lcd_onchip_memory2_0'
+Info: onchip_memory2_0: "lcd" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: button: Starting RTL generation for module 'lcd_button'
+Info: button:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lcd_button --dir=/tmp/alt7847_516846283515085985.dir/0009_button_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0009_button_gen//lcd_button_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt7847_516846283515085985.dir/0009_button_gen/  ]
+Info: button: Done RTL generation for module 'lcd_button'
+Info: button: "lcd" instantiated altera_avalon_pio "button"
+Info: led: Starting RTL generation for module 'lcd_led'
+Info: led:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lcd_led --dir=/tmp/alt7847_516846283515085985.dir/0010_led_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0010_led_gen//lcd_led_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt7847_516846283515085985.dir/0010_led_gen/  ]
+Info: led: Done RTL generation for module 'lcd_led'
+Info: led: "lcd" instantiated altera_avalon_pio "led"
+Info: jtag_uart_0: Starting RTL generation for module 'lcd_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=lcd_jtag_uart_0 --dir=/tmp/alt7847_516846283515085985.dir/0011_jtag_uart_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0011_jtag_uart_0_gen//lcd_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt7847_516846283515085985.dir/0011_jtag_uart_0_gen/  ]
+Info: jtag_uart_0: Done RTL generation for module 'lcd_jtag_uart_0'
+Info: jtag_uart_0: "lcd" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: nios2_qsys_0_instruction_master_translator: "lcd" instantiated altera_merlin_master_translator "nios2_qsys_0_instruction_master_translator"
+Info: nios2_qsys_0_jtag_debug_module_translator: "lcd" instantiated altera_merlin_slave_translator "nios2_qsys_0_jtag_debug_module_translator"
+Info: nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent: "lcd" instantiated altera_merlin_master_agent "nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent: "lcd" instantiated altera_merlin_slave_agent "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "lcd" instantiated altera_avalon_sc_fifo "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "lcd" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "lcd" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "lcd" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "lcd" instantiated altera_merlin_router "id_router_003"
+Info: rst_controller: "lcd" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "lcd" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "lcd" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "lcd" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "lcd" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "lcd" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "lcd" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /home/aluno/Problema2/lcd/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "lcd" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file /home/aluno/Problema2/lcd/simulation/submodules/altera_merlin_arbitrator.sv
+Info: irq_mapper: "lcd" instantiated altera_irq_mapper "irq_mapper"
+Info: lcd: Done lcd" with 24 modules, 76 files, 1270516 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/aluno/Problema2/lcd.spd --output-directory=/home/aluno/Problema2/lcd/simulation/
+Info: Doing: ip-make-simscript --spd=/home/aluno/Problema2/lcd.spd --output-directory=/home/aluno/Problema2/lcd/simulation/
+Info: Generating the following file(s) for MODELSIM simulator in /home/aluno/Problema2/lcd/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/aluno/Problema2/lcd/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/aluno/Problema2/lcd/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/aluno/Problema2/lcd/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	23 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERAPRO simulator in /home/aluno/Problema2/lcd/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=/home/aluno/Problema2/ --output-directory=/home/aluno/Problema2/lcd/ --report-file=bsf:/home/aluno/Problema2/lcd.bsf --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE30F23C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/aluno/Problema2/lcd.qsys
+Progress: Loading Problema2/lcd.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 13.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding button [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module button
+Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module led
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: lcd.button: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=/home/aluno/Problema2/ --output-directory=/home/aluno/Problema2/lcd/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:/home/aluno/Problema2/lcd.sopcinfo --report-file=html:/home/aluno/Problema2/lcd.html --report-file=qip:/home/aluno/Problema2/lcd/synthesis/lcd.qip --report-file=cmp:/home/aluno/Problema2/lcd.cmp --report-file=svd --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE30F23C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/aluno/Problema2/lcd.qsys --language=VERILOG
+Progress: Loading Problema2/lcd.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.0]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 13.0]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 13.0.1.99.2]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding button [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module button
+Progress: Adding led [altera_avalon_pio 13.0.1.99.2]
+Progress: Parameterizing module led
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 13.0.1.99.2]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: lcd.button: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: lcd: Generating lcd "lcd" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 6 modules, 23 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 13 modules, 49 connections
+Info: merlin_domain_transform: After transform: 26 modules, 128 connections
+Info: merlin_router_transform: After transform: 33 modules, 154 connections
+Info: reset_adaptation_transform: After transform: 35 modules, 133 connections
+Info: merlin_network_to_switch_transform: After transform: 48 modules, 163 connections
+Info: merlin_mm_transform: After transform: 48 modules, 163 connections
+Info: merlin_interrupt_mapper_transform: After transform: 49 modules, 166 connections
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Warning: lcd: "No matching role found for rst_controller:reset_out:reset_req (reset_req)"
+Info: nios2_qsys_0: Starting RTL generation for module 'lcd_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/eperl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -I /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2 -- /opt/altera/13sp1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=lcd_nios2_qsys_0 --dir=/tmp/alt7847_516846283515085985.dir/0030_nios2_qsys_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0030_nios2_qsys_0_gen//lcd_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info: nios2_qsys_0: # 2018.11.12 09:56:01 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2018.11.12 09:56:01 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2018.11.12 09:56:03 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2018.11.12 09:56:03 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2018.11.12 09:56:03 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2018.11.12 09:56:03 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2018.11.12 09:56:07 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2018.11.12 09:56:07 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2018.11.12 09:56:15 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'lcd_nios2_qsys_0'
+Info: nios2_qsys_0: "lcd" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: onchip_memory2_0: Starting RTL generation for module 'lcd_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=lcd_onchip_memory2_0 --dir=/tmp/alt7847_516846283515085985.dir/0031_onchip_memory2_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0031_onchip_memory2_0_gen//lcd_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0: Done RTL generation for module 'lcd_onchip_memory2_0'
+Info: onchip_memory2_0: "lcd" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: button: Starting RTL generation for module 'lcd_button'
+Info: button:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lcd_button --dir=/tmp/alt7847_516846283515085985.dir/0032_button_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0032_button_gen//lcd_button_component_configuration.pl  --do_build_sim=0  ]
+Info: button: Done RTL generation for module 'lcd_button'
+Info: button: "lcd" instantiated altera_avalon_pio "button"
+Info: led: Starting RTL generation for module 'lcd_led'
+Info: led:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=lcd_led --dir=/tmp/alt7847_516846283515085985.dir/0033_led_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0033_led_gen//lcd_led_component_configuration.pl  --do_build_sim=0  ]
+Info: led: Done RTL generation for module 'lcd_led'
+Info: led: "lcd" instantiated altera_avalon_pio "led"
+Info: jtag_uart_0: Starting RTL generation for module 'lcd_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /opt/altera/13sp1/quartus/linux/perl/bin/perl -I /opt/altera/13sp1/quartus/common/ip/altera/common/perl/5.8.3 -I /opt/altera/13sp1/quartus/sopc_builder/bin/europa -I /opt/altera/13sp1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/13sp1/quartus/sopc_builder/bin -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/13sp1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=lcd_jtag_uart_0 --dir=/tmp/alt7847_516846283515085985.dir/0034_jtag_uart_0_gen/ --quartus_dir=/opt/altera/13sp1/quartus --verilog --config=/tmp/alt7847_516846283515085985.dir/0034_jtag_uart_0_gen//lcd_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0: Done RTL generation for module 'lcd_jtag_uart_0'
+Info: jtag_uart_0: "lcd" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: nios2_qsys_0_instruction_master_translator: "lcd" instantiated altera_merlin_master_translator "nios2_qsys_0_instruction_master_translator"
+Info: nios2_qsys_0_jtag_debug_module_translator: "lcd" instantiated altera_merlin_slave_translator "nios2_qsys_0_jtag_debug_module_translator"
+Info: nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent: "lcd" instantiated altera_merlin_master_agent "nios2_qsys_0_instruction_master_translator_avalon_universal_master_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent: "lcd" instantiated altera_merlin_slave_agent "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "lcd" instantiated altera_avalon_sc_fifo "nios2_qsys_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "lcd" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "lcd" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "lcd" instantiated altera_merlin_router "id_router"
+Info: id_router_003: "lcd" instantiated altera_merlin_router "id_router_003"
+Info: rst_controller: "lcd" instantiated altera_reset_controller "rst_controller"
+Info: cmd_xbar_demux: "lcd" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "lcd" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "lcd" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: rsp_xbar_demux: "lcd" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_003: "lcd" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_003"
+Info: rsp_xbar_mux: "lcd" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file /home/aluno/Problema2/lcd/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "lcd" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file /home/aluno/Problema2/lcd/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: irq_mapper: "lcd" instantiated altera_irq_mapper "irq_mapper"
+Info: lcd: Done lcd" with 24 modules, 69 files, 1257974 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
